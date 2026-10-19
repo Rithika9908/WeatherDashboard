@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A responsive weather dashboard with live weather and forecasts.">
+    <title>SkyCast | Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="dashboard">
+        <header class="topbar">
+            <a class="brand" href="#">☀ SkyCast</a>
+            <span class="live-label"><span class="dot"></span> LIVE WEATHER</span>
+        </header>
+
+        <section class="intro">
+            <p class="eyebrow">YOUR PERSONAL WEATHER STATION</p>
+            <h1>Weather, at a glance.</h1>
+            <p>Discover the weather conditions in your city.</p>
+        </section>
+
+        <form id="searchForm" class="search-box">
+            <span>⌕</span>
+            <input id="cityInput" type="text"
+                placeholder="Search a city, e.g. Chennai"
+                aria-label="Search city" required>
+            <button type="submit" id="searchBtn">Search</button>
+        </form>
+
+        <p id="status" class="status" role="status">
+            Search for a city to see its weather.
+        </p>
+
+        <section id="weatherContent" class="hidden">
+            <div class="current-weather card">
+                <div class="current-info">
+                    <p id="location" class="location">City</p>
+                    <p id="currentDate" class="muted"></p>
+                    <div class="temperature">
+                        <span id="weatherIcon">☀️</span>
+                        <h2 id="temperature">--°</h2>
+                    </div>
+                    <p id="condition" class="condition">Weather condition</p>
+                    <p class="muted">Feels like <span id="feelsLike">--°</span></p>
+                </div>
+                <div class="weather-summary">
+                    <span class="sun-art" id="bigIcon">🌤️</span>
+                    <p id="summaryText">Have a lovely day!</p>
+                </div>
+            </div>
+
+            <section class="details-section">
+                <h2>Today's Highlights</h2>
+                <div class="details-grid">
+                    <article class="detail-card card">
+                        <span>💧 Humidity</span>
+                        <strong id="humidity">--%</strong>
+                    </article>
+                    <article class="detail-card card">
+                        <span>💨 Wind Speed</span>
+                        <strong id="wind">-- km/h</strong>
+                    </article>
+                    <article class="detail-card card">
+                        <span>👁 Visibility</span>
+                        <strong id="visibility">-- km</strong>
+                    </article>
+                    <article class="detail-card card">
+                        <span>🌡️ UV Index</span>
+                        <strong id="uv">--</strong>
+                    </article>
+                </div>
+            </section>
+
+            <section class="forecast-section">
+                <h2>7-Day Forecast</h2>
+                <div id="forecast" class="forecast-grid"></div>
+            </section>
+        </section>
+
+        <footer>
+            <p>SkyCast Weather Dashboard · Built with HTML, CSS & JavaScript</p>
+            <p>Weather data provided by Open-Meteo</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
